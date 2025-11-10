@@ -1,0 +1,13 @@
+{
+  "title": "New User Alert",
+  "description": "Triggers if useradd/adduser command appears",
+  "priority": 2,
+  "condition": {
+    "type": "aggregation",
+    "query": "message:\"useradd\" OR message:\"adduser\"",
+    "time_range": "PT1M",
+    "threshold": 1,
+    "aggregation_function": "count"
+  },
+  "tags": ["persistence", "user_creation"]
+}

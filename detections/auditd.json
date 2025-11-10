@@ -1,0 +1,13 @@
+{
+  "title": "Privilege Escalation Alert",
+  "description": "Triggers if sudo or su command is executed",
+  "priority": 3,
+  "condition": {
+    "type": "aggregation",
+    "query": "message:\"sudo\" OR message:\"su\"",
+    "time_range": "PT1M",
+    "threshold": 1,
+    "aggregation_function": "count"
+  },
+  "tags": ["privilege_escalation", "sudo", "su"]
+}

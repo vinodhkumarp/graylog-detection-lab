@@ -1,0 +1,5 @@
+# Update the below rules in /etc/audit/rules.d/audit.rules
+-w /etc/passwd -p wa -k user_changes
+-w /bin/su -p x -k priv_escalation
+-w /usr/bin/sudo -p x -k priv_escalation
+-w /var/log/auth.log -p r -k auth_failures

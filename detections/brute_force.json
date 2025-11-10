@@ -1,0 +1,13 @@
+{
+  "title": "Brute Force Alert",
+  "description": "Triggers if more than 5 failed SSH logins occur in 1 minute",
+  "priority": 2,
+  "condition": {
+    "type": "aggregation",
+    "query": "message:\"Failed password\"",
+    "time_range": "PT1M",
+    "threshold": 5,
+    "aggregation_function": "count"
+  },
+  "tags": ["ssh", "brute_force", "authentication"]
+}
